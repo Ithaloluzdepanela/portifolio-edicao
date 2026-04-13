@@ -75,21 +75,23 @@ button   { font-family: var(--font-body); }
   overflow: visible;
 }
 
+
 /* Linhas fixas do crosshair */
 #cursor .cross {
-  stroke: var(--yellow);
+  stroke: var(--white);
   stroke-width: 1.8;
   stroke-linecap: round;
 }
 
 /* Anel circular da mira */
 #cursor .target-ring {
+  stroke: var(--white);
   transition: r 0.25s var(--ease);
 }
 
 /* Raios diagonais — invisíveis por padrão */
 #cursor .ray {
-  stroke: var(--yellow);
+  stroke: var(--white);
   stroke-width: 2.2;
   stroke-linecap: round;
   /* comprimento total do raio ≈ 31 unidades SVG */
@@ -381,6 +383,7 @@ button   { font-family: var(--font-body); }
 .hero-sub {
   font-size: 13px;
   letter-spacing: 2.5px;
+  line-height: 1.75;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
   margin-bottom: 44px;
