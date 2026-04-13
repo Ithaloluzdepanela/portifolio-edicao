@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Santana Editor — Edição com Foco. Editor de vídeo especializado em YouTube e Reels com estilo dinâmico e acelerado.">
+  <title>Santana Editor — Edição com Foco</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- =============================================
+       CURSOR CUSTOMIZADO — Alvo com Raios Solares
+  ============================================== -->
+  <div id="cursor">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+      <!-- 4 Raios Diagonais (visíveis apenas no modo sol/hover) -->
+      <line class="ray r-ne" x1="62" y1="38" x2="84" y2="16"/>
+      <line class="ray r-se" x1="62" y1="62" x2="84" y2="84"/>
+      <line class="ray r-sw" x1="38" y1="62" x2="16" y2="84"/>
+      <line class="ray r-nw" x1="38" y1="38" x2="16" y2="16"/>
+      <!-- Mira: círculo externo -->
+      <circle class="target-ring" cx="50" cy="50" r="16" fill="none" stroke="#ffdd00" stroke-width="2"/>
+      <!-- Crosshair — sempre visível (N, S, L, O) -->
+      <line class="cross" x1="50" y1="3"  x2="50" y2="33"/>
+      <line class="cross" x1="50" y1="67" x2="50" y2="97"/>
+      <line class="cross" x1="3"  y1="50" x2="33" y2="50"/>
+      <line class="cross" x1="67" y1="50" x2="97" y2="50"/>
+      <!-- Ponto central -->
+      <circle cx="50" cy="50" r="3" fill="#ffdd00"/>
+    </svg>
+  </div>
+
+  <!-- =============================================
+       NAVBAR
+  ============================================== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-white">SANTANA</span>
+        <span class="logo-yellow">EDITOR</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Resultados</a></li>
+        <li><a href="#contato" class="nav-cta">Contato</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HERO
+  ============================================== -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="grain-overlay"></div>
+      <div class="hero-diagonal-line"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-badge">✦ Editor de Vídeo Profissional</span>
+      <h1 class="hero-title">
+        <span class="ht-white">EDIÇÃO</span>
+        <span class="ht-yellow">COM FOCO</span>
+      </h1>
+      <p class="hero-sub">YouTube · Reels · Shorts · Conteúdo que para o scroll</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary">Ver Portfólio</a>
+        <a href="#contato" class="btn-ghost">Falar Comigo</a>
+      </div>
+    </div>
+    <div class="hero-video-wrap">
+      <span class="video-label">▶ Trabalho em destaque — vídeo mais visto em 3 dias</span>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/OAoU2zoSMxk"
+          title="Trabalho em destaque — Santana Editor"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SOBRE
+  ============================================== -->
+  <section id="sobre" class="section section-alt">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-text reveal">
+          <span class="section-tag">Quem sou eu</span>
+          <h2 class="section-title">CRIANDO<br><span class="text-yellow">IMPACTO</span><br>VISUAL</h2>
+          <p>Sou editor de vídeo especializado em conteúdo <strong>dinâmico e acelerado</strong>. Trabalho com criadores e marcas que precisam de edições que prendem atenção desde o primeiro segundo — porque atenção é moeda.</p>
+          <p>Cada corte, cada transição, cada efeito é pensado com foco em <strong>retenção e resultado</strong>.</p>
+        </div>
+        <div class="metrics reveal">
+          <div class="metric-card">
+            <span class="metric-num">+100</span>
+            <span class="metric-label">Vídeos Editados</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">1M+</span>
+            <span class="metric-label">Visualizações Geradas</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">3–5</span>
+            <span class="metric-label">Anos de Experiência</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">100%</span>
+            <span class="metric-label">Foco no Resultado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PORTFÓLIO
+  ============================================== -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Trabalhos</span>
+        <h2 class="section-title">PORTFÓLIO</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="filter-wrap reveal">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="youtube">YouTube</button>
+        <button class="filter-btn" data-filter="reels">Reels</button>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- ── YouTube 1 — Mais visto ── -->
+        <div class="p-card" data-category="youtube">
+          <span class="p-badge badge-yt">YouTube</span>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/OAoU2zoSMxk"
+              title="Vídeo mais visto do canal"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+          <div class="p-info">
+            <span class="p-tag">🏆 Vídeo mais visto em 3 dias</span>
+          </div>
+        </div>
+
+        <!-- ── YouTube 2 — 3° mais visto ── -->
+        <div class="p-card" data-category="youtube">
+          <span class="p-badge badge-yt">YouTube</span>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/DlbzayA-q8w"
+              title="3° vídeo mais visto do canal"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+          <div class="p-info">
+            <span class="p-tag">🥉 3° Vídeo mais visto do canal</span>
+          </div>
+        </div>
+
+        <!-- ── YouTube 3 — Placeholder ── -->
+        <!-- Para adicionar: troque "ID_DO_VIDEO" pelo ID real do YouTube -->
+        <div class="p-card" data-category="youtube">
+          <span class="p-badge badge-yt">YouTube</span>
+          <div class="video-wrap placeholder-wrap">
+            <div class="ph-inner">
+              <span class="ph-icon">▶</span>
+              <p>Adicione o ID do vídeo em <code>index.html</code></p>
+              <!-- Troque o src abaixo: src="https://www.youtube.com/embed/ID_DO_VIDEO" -->
+            </div>
+          </div>
+          <div class="p-info"><span class="p-tag">Em breve</span></div>
+        </div>
+
+        <!-- ── Reels 1 — Placeholder ── -->
+        <!-- Para adicionar: descomente o blockquote e cole o link do Reel -->
+        <div class="p-card" data-category="reels">
+          <span class="p-badge badge-reel">Reels</span>
+          <div class="reel-wrap placeholder-wrap">
+            <div class="ph-inner">
+              <span class="ph-icon">📱</span>
+              <p>Cole o link do Reel do Instagram</p>
+              <!--
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/SEU_REEL_AQUI/"
+                data-instgrm-version="14">
+              </blockquote>
+              -->
+            </div>
+          </div>
+          <div class="p-info"><span class="p-tag">Instagram Reel</span></div>
+        </div>
+
+        <!-- ── Reels 2 — Placeholder ── -->
+        <div class="p-card" data-category="reels">
+          <span class="p-badge badge-reel">Reels</span>
+          <div class="reel-wrap placeholder-wrap">
+            <div class="ph-inner">
+              <span class="ph-icon">📱</span>
+              <p>Cole o link do Reel do Instagram</p>
+            </div>
+          </div>
+          <div class="p-info"><span class="p-tag">Instagram Reel</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SERVIÇOS
+  ============================================== -->
+  <section id="servicos" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">O que eu faço</span>
+        <h2 class="section-title">SERVIÇOS</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="servicos-grid">
+
+        <div class="s-card reveal">
+          <div class="s-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3>Edição YouTube</h3>
+          <p>Vídeos longos com cortes que prendem do começo ao fim. Retenção, trilhas, legendas animadas e efeitos que aumentam o tempo de tela.</p>
+        </div>
+
+        <div class="s-card reveal">
+          <div class="s-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1"/><line x1="9" y1="6" x2="15" y2="6"/>
+            </svg>
+          </div>
+          <h3>Reels & Shorts</h3>
+          <p>Conteúdo vertical que explode em alcance. Edição rápida, hooks irresistíveis e trends que param o scroll nos primeiros 3 segundos.</p>
+        </div>
+
+        <div class="s-card reveal">
+          <div class="s-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
+            </svg>
+          </div>
+          <h3>Conteúdo Comercial</h3>
+          <p>Vídeos institucionais e de produto com acabamento profissional. Para marcas que querem transmitir credibilidade e autoridade.</p>
+        </div>
+
+        <div class="s-card reveal">
+          <div class="s-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Motion & Efeitos</h3>
+          <p>Intros, animações de texto, transições personalizadas e efeitos visuais que elevam a qualidade da produção a outro nível.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       DEPOIMENTOS / RESULTADOS
+  ============================================== -->
+  <section id="depoimentos" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Resultados</span>
+        <h2 class="section-title">O QUE<br><span class="text-yellow">DIZEM</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Vídeo depoimento principal -->
+      <div class="depo-video-wrap reveal">
+        <div class="depo-ph">
+          <span class="ph-icon">🎥</span>
+          <p class="depo-ph-title">Vídeo Depoimento</p>
+          <span class="depo-ph-hint">Adicione aqui o embed de um vídeo depoimento de cliente</span>
+          <!-- Para adicionar: cole um iframe de YouTube ou Loom aqui -->
+        </div>
+      </div>
+
+      <!-- Carrossel de prints / screenshots -->
+      <div class="carousel-wrap reveal">
+        <h3 class="carousel-title">Prints de resultados <span class="text-yellow">↓</span></h3>
+        <div class="carousel-track" id="carouselTrack">
+          <div class="c-slide print-slot">
+            <span class="ph-icon">📸</span>
+            <p>Print / Screenshot</p>
+            <!-- Troque o conteúdo acima por uma tag <img src="seu-print.jpg" alt="resultado"> -->
+          </div>
+          <div class="c-slide print-slot">
+            <span class="ph-icon">📸</span>
+            <p>Print / Screenshot</p>
+          </div>
+          <div class="c-slide print-slot">
+            <span class="ph-icon">📸</span>
+            <p>Print / Screenshot</p>
+          </div>
+          <div class="c-slide print-slot">
+            <span class="ph-icon">📸</span>
+            <p>Print / Screenshot</p>
+          </div>
+          <div class="c-slide print-slot">
+            <span class="ph-icon">📸</span>
+            <p>Print / Screenshot</p>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="c-btn" id="prevBtn" aria-label="Anterior">←</button>
+          <button class="c-btn" id="nextBtn" aria-label="Próximo">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTATO
+  ============================================== -->
+  <section id="contato" class="section-contact">
+    <div class="container">
+      <div class="contact-inner reveal">
+        <span class="section-tag tag-dark">Vamos trabalhar juntos</span>
+        <h2 class="contact-title">VAMOS CRIAR<br>ALGO INCRÍVEL?</h2>
+        <p class="contact-sub">Edição com foco — do roteiro ao corte final.</p>
+        <div class="contact-actions">
+
+          <a href="https://wa.me/5538998707769" target="_blank" rel="noopener" class="btn-dark">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.934 1.395 5.608L0 24l6.545-1.371A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.032-1.385l-.36-.215-3.732.978.999-3.642-.235-.374A9.818 9.818 0 1112 21.818z"/>
+            </svg>
+            WhatsApp
+          </a>
+
+          <a href="https://instagram.com/santana__editor" target="_blank" rel="noopener" class="btn-dark">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            @santana__editor
+          </a>
+
+          <a href="mailto:santaneditorcontato@gmail.com" class="btn-dark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,12 2,6"/>
+            </svg>
+            E-mail
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">SANTANA <span class="text-yellow">EDITOR</span></span>
+        <span class="footer-slogan">Edição com Foco</span>
+        <span class="footer-copy">© 2025 Santana Editor. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Instagram Embed Script — descomente quando adicionar Reels reais -->
+  <!-- <script async src="//www.instagram.com/embed.js"></script> -->
+
+</body>
+</html>
