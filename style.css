@@ -724,6 +724,39 @@ button {
   background: #000 !important;
 }
 
+/* Mobile adjustments para reels */
+@media (max-width: 768px) {
+  .reel-wrap {
+    aspect-ratio: 9 / 16;
+    max-height: 450px;
+    -webkit-mask: none;
+    mask: none;
+  }
+
+  .reel-wrap::after {
+    height: 60px;
+  }
+
+  .reel-wrap blockquote.instagram-media {
+    transform: scale(1.1) translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .reel-wrap {
+    max-height: 380px;
+  }
+
+  .reel-wrap::after {
+    height: 50px;
+  }
+
+  .reel-wrap blockquote.instagram-media {
+    transform: scale(1.05) translateY(-2px);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+  }
+}
+
 
 /* Placeholders */
 .placeholder-wrap {
