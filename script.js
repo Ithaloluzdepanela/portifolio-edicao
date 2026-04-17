@@ -47,6 +47,19 @@
 
   // Remove sol se o mouse sair da janela
   document.addEventListener('mouseleave', () => cursor.classList.remove('sun'));
+
+  // === DEADZONE: desativa cursor ao passar sobre iframes (players/embeds) ===
+  const embeds = document.querySelectorAll('iframe, .reel-wrap, .video-wrap');
+  if (embeds.length > 0) {
+    embeds.forEach(embed => {
+      embed.addEventListener('mouseenter', () => {
+        cursor.classList.add('deadzone');
+      });
+      embed.addEventListener('mouseleave', () => {
+        cursor.classList.remove('deadzone');
+      });
+    });
+  }
 })();
 
 

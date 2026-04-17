@@ -159,6 +159,13 @@ button {
   transform: translate(-50%, -50%) scale(1.15);
 }
 
+/* === DEADZONE (players/embeds) — cursor desaparece === */
+#cursor.deadzone {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
 /* === UTILITÁRIOS ============================== */
 .container {
   max-width: 1200px;
@@ -674,17 +681,49 @@ button {
   border: none;
 }
 
-/* Wrapper de Reel (9:16) */
+/* Wrapper de Reel (9:16) com fade nas extremidades */
 .reel-wrap {
   aspect-ratio: 9 / 16;
-  max-height: 380px;
+  max-height: 600px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
+  position: relative;
+  -webkit-mask: linear-gradient(transparent 0%, #000 10px, #000 90%, transparent 100%);
+  mask: linear-gradient(transparent 0%, #000 10px, #000 90%, transparent 100%);
 }
+
+/* Cobre a barra branca do Instagram com um overlay */
+.reel-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.95) 100%);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* Corta a barra branca inferior do Instagram e aplica tema escuro */
+.reel-wrap blockquote.instagram-media {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 88%);
+  transform: scale(1.2) translateY(-10px);
+  max-height: 100%;
+  filter: brightness(0.85) contrast(1.1);
+  background: #000 !important;
+}
+
 
 /* Placeholders */
 .placeholder-wrap {
