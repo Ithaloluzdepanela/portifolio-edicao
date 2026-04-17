@@ -672,6 +672,13 @@ button {
   mask: linear-gradient(transparent 0%, #000 10px, #000 90%, transparent 100%);
 }
 
+@media (max-width: 768px) {
+  .video-wrap {
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+
 .video-wrap iframe {
   position: absolute;
   top: 0;
@@ -745,6 +752,7 @@ button {
 @media (max-width: 480px) {
   .reel-wrap {
     max-height: 380px;
+    overflow: visible;
   }
 
   .reel-wrap::after {
@@ -754,6 +762,10 @@ button {
   .reel-wrap blockquote.instagram-media {
     transform: scale(1.05) translateY(-2px);
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+  }
+
+  .p-card {
+    overflow: visible;
   }
 }
 
