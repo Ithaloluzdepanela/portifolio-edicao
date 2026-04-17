@@ -43,6 +43,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -51,6 +53,9 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 a {
@@ -1165,9 +1170,22 @@ button {
     grid-template-columns: 1fr;
     gap: 52px;
   }
+  
+  html {
+    width: 100vw;
+  }
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
 
   .section,
   .section-alt {
@@ -1231,6 +1249,17 @@ button {
 }
 
 @media (max-width: 480px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+  
   .metrics {
     grid-template-columns: 1fr;
   }
