@@ -5,9 +5,9 @@
   <link rel="icon" href="imgs/logo-santana-tranp.png" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description"
+  <meta name="description" data-i18n="meta.description"
     content="Santana Editor — Edição com Foco. Editor de vídeo especializado em YouTube e Reels com estilo dinâmico e acelerado.">
-  <title>Santana Editor — Edição com Foco</title>
+  <title data-i18n="meta.title">Santana Editor — Edição com Foco</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,12 +50,19 @@
         <span class="logo-yellow">EDITOR</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#depoimentos">Resultados</a></li>
-        <li><a href="#contato" class="nav-cta">Contato</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#portfolio" data-i18n="nav.portfolio">Portfólio</a></li>
+        <li><a href="#depoimentos" data-i18n="nav.results">Resultados</a></li>
+        <li><a href="#contato" class="nav-cta" data-i18n="nav.contact">Contato</a></li>
+        <li class="lang-switch-wrap">
+          <button class="lang-switch" id="langSwitch" type="button" aria-label="Toggle language">
+            <span class="lang-opt" data-lang="pt">PT</span>
+            <span class="lang-sep">/</span>
+            <span class="lang-opt" data-lang="en">EN</span>
+          </button>
+        </li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <button class="nav-toggle" id="navToggle" data-i18n-attr="aria-label:nav.openMenu" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -71,19 +78,19 @@
       <div class="hero-glow"></div>
     </div>
     <div class="hero-content">
-      <span class="hero-badge">✦ Editor de Vídeo Profissional</span>
+      <span class="hero-badge" data-i18n="hero.badge">✦ Editor de Vídeo Profissional</span>
       <h1 class="hero-title">
-        <span class="ht-white">EDIÇÃO</span>
-        <span class="ht-yellow">COM FOCO</span>
+        <span class="ht-white" data-i18n="hero.title1">EDIÇÃO</span>
+        <span class="ht-yellow" data-i18n="hero.title2">COM FOCO</span>
       </h1>
-      <p class="hero-sub">YouTube · Reels · Shorts · Conteúdo que para o scroll</p>
+      <p class="hero-sub" data-i18n="hero.sub">YouTube · Reels · Shorts · Conteúdo que para o scroll</p>
       <div class="hero-actions">
-        <a href="#portfolio" class="btn-primary">Ver Portfólio</a>
-        <a href="#contato" class="btn-ghost">Falar Comigo</a>
+        <a href="#portfolio" class="btn-primary" data-i18n="hero.btnPortfolio">Ver Portfólio</a>
+        <a href="#contato" class="btn-ghost" data-i18n="hero.btnContact">Falar Comigo</a>
       </div>
     </div>
     <div class="hero-video-wrap">
-      <span class="video-label">▶ Trabalho em destaque — vídeo mais visto do canal em 3 dias</span>
+      <span class="video-label" data-i18n="hero.videoLabel">▶ Trabalho em destaque — vídeo mais visto do canal em 3 dias</span>
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/OAoU2zoSMxk" title="Trabalho em destaque — Santana Editor"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -100,29 +107,29 @@
     <div class="container">
       <div class="sobre-grid">
         <div class="sobre-text reveal">
-          <span class="section-tag">Quem sou eu</span>
-          <h2 class="section-title">CRIANDO<br><span class="text-yellow">IMPACTO</span><br>VISUAL</h2>
-          <p>Meu nome é Santana, edito vídeos a 5 anos, e procuro sempre te trazer foco total no que realmente importa:
+          <span class="section-tag" data-i18n="about.tag">Quem sou eu</span>
+          <h2 class="section-title" data-i18n-html="about.title">CRIANDO<br><span class="text-yellow">IMPACTO</span><br>VISUAL</h2>
+          <p data-i18n-html="about.p1">Meu nome é Santana, edito vídeos a 5 anos, e procuro sempre te trazer foco total no que realmente importa:
             <strong>Retenção e conversão — atenção é moeda.</strong>
           </p>
-          <p>Cada corte, cada transição, cada efeito é pensado com foco em <strong>retenção e resultado</strong>.</p>
+          <p data-i18n-html="about.p2">Cada corte, cada transição, cada efeito é pensado com foco em <strong>retenção e resultado</strong>.</p>
         </div>
         <div class="metrics reveal">
           <div class="metric-card">
             <span class="metric-num">+200</span>
-            <span class="metric-label">Vídeos Editados</span>
+            <span class="metric-label" data-i18n="about.m1">Vídeos Editados</span>
           </div>
           <div class="metric-card">
             <span class="metric-num">1M+</span>
-            <span class="metric-label">Visualizações Geradas</span>
+            <span class="metric-label" data-i18n="about.m2">Visualizações Geradas</span>
           </div>
           <div class="metric-card">
             <span class="metric-num">5 </span>
-            <span class="metric-label">Anos de Experiência</span>
+            <span class="metric-label" data-i18n="about.m3">Anos de Experiência</span>
           </div>
           <div class="metric-card">
             <span class="metric-num">100%</span>
-            <span class="metric-label">Foco no Resultado</span>
+            <span class="metric-label" data-i18n="about.m4">Foco no Resultado</span>
           </div>
         </div>
       </div>
@@ -135,12 +142,12 @@
   <section id="portfolio" class="section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Trabalhos</span>
-        <h2 class="section-title">PORTFÓLIO</h2>
+        <span class="section-tag" data-i18n="portfolio.tag">Trabalhos</span>
+        <h2 class="section-title" data-i18n="portfolio.title">PORTFÓLIO</h2>
         <div class="title-line"></div>
       </div>
       <div class="filter-wrap reveal">
-        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filterAll">Todos</button>
         <button class="filter-btn" data-filter="youtube">YouTube</button>
         <button class="filter-btn" data-filter="reels">Reels</button>
       </div>
@@ -156,7 +163,7 @@
             </iframe>
           </div>
           <div class="p-info">
-            <span class="p-tag">Vídeo mais visto em 3 dias</span>
+            <span class="p-tag" data-i18n="portfolio.tagYt1">Vídeo mais visto em 3 dias</span>
           </div>
         </div>
 
@@ -170,7 +177,7 @@
             </iframe>
           </div>
           <div class="p-info">
-            <span class="p-tag">3° Vídeo mais visto do canal</span>
+            <span class="p-tag" data-i18n="portfolio.tagYt2">3° Vídeo mais visto do canal</span>
           </div>
         </div>
 
@@ -189,7 +196,7 @@
               <!-- Troque o src abaixo: src="https://www.youtube.com/embed/ID_DO_VIDEO" -->
             </div>
           </div>
-          <div class="p-info"><span class="p-tag">Vídeo recente</span></div>
+          <div class="p-info"><span class="p-tag" data-i18n="portfolio.tagYt3">Vídeo recente</span></div>
         </div>
 
         <!-- ── Reels 1 — Placeholder ── -->
@@ -201,7 +208,7 @@
               data-instgrm-version="14">
             </blockquote>
           </div>
-          <div class="p-info"><span class="p-tag">Instagram Reel</span></div>
+          <div class="p-info"><span class="p-tag" data-i18n="portfolio.reelTag">Instagram Reel</span></div>
         </div>
 
         <!-- ── Reels 2 — Placeholder ── -->
@@ -214,7 +221,7 @@
               </blockquote>
             </div>
           </div>
-          <div class="p-info"><span class="p-tag">Instagram Reel</span></div>
+          <div class="p-info"><span class="p-tag" data-i18n="portfolio.reelTag">Instagram Reel</span></div>
         </div>
 
         <div class="p-card" data-category="reels">
@@ -226,7 +233,7 @@
               </blockquote>
             </div>
           </div>
-          <div class="p-info"><span class="p-tag">Instagram Reel</span></div>
+          <div class="p-info"><span class="p-tag" data-i18n="portfolio.reelTag">Instagram Reel</span></div>
         </div>
 
       </div>
@@ -240,8 +247,8 @@
   <section id="depoimentos" class="section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Resultados</span>
-        <h2 class="section-title">O QUE<br><span class="text-yellow">DIZEM</span></h2>
+        <span class="section-tag" data-i18n="testimonials.tag">Resultados</span>
+        <h2 class="section-title" data-i18n-html="testimonials.title">O QUE<br><span class="text-yellow">DIZEM</span></h2>
         <div class="title-line"></div>
       </div>
 
@@ -257,7 +264,7 @@
 
       <!-- Carrossel de prints / screenshots -->
       <div class="carousel-wrap reveal">
-        <h3 class="carousel-title">Prints de resultados <span class="text-yellow">↓</span></h3>
+        <h3 class="carousel-title" data-i18n-html="testimonials.carouselTitle">Prints de resultados <span class="text-yellow">↓</span></h3>
         <div class="carousel-track" id="carouselTrack">
           <div class="c-slide print-sloth">
             <img src="imgs/SALVA PELO GPT (4).png" alt="Print de resultado — Santana Editor">
@@ -279,8 +286,8 @@
           </div>
         </div>
         <div class="carousel-controls">
-          <button class="c-btn" id="prevBtn" aria-label="Anterior">←</button>
-          <button class="c-btn" id="nextBtn" aria-label="Próximo">→</button>
+          <button class="c-btn" id="prevBtn" data-i18n-attr="aria-label:testimonials.prev" aria-label="Anterior">←</button>
+          <button class="c-btn" id="nextBtn" data-i18n-attr="aria-label:testimonials.next" aria-label="Próximo">→</button>
         </div>
       </div>
   </section>
@@ -291,9 +298,9 @@
   <section id="contato" class="section-contact">
     <div class="container">
       <div class="contact-inner reveal">
-        <span class="section-tag tag-dark">Vamos trabalhar juntos</span>
-        <h2 class="contact-title">VAMOS CRIAR<br>ALGO INCRÍVEL?</h2>
-        <p class="contact-sub">Edição com foco — do roteiro ao corte final.</p>
+        <span class="section-tag tag-dark" data-i18n="contact.tag">Vamos trabalhar juntos</span>
+        <h2 class="contact-title" data-i18n-html="contact.title">VAMOS CRIAR<br>ALGO INCRÍVEL?</h2>
+        <p class="contact-sub" data-i18n="contact.sub">Edição com foco — do roteiro ao corte final.</p>
         <div class="contact-actions">
 
           <a href="https://wa.me/5538998707769?text=Gostaria%20de%20fazer%20um%20or%C3%A7amento!" target="_blank"
@@ -336,8 +343,8 @@
     <div class="container">
       <div class="footer-inner">
         <span class="footer-logo">SANTANA <span class="text-yellow">EDITOR</span></span>
-        <span class="footer-slogan">Edição com Foco</span>
-        <span class="footer-copy">© 2025 Santana Editor. Todos os direitos reservados.</span>
+        <span class="footer-slogan" data-i18n="footer.slogan">Edição com Foco</span>
+        <span class="footer-copy" data-i18n="footer.copy">© 2025 Santana Editor. Todos os direitos reservados.</span>
       </div>
     </div>
   </footer>

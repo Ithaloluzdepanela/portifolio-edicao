@@ -349,6 +349,44 @@ button {
   color: var(--black);
 }
 
+/* Language switch (PT/EN) */
+.lang-switch-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.lang-switch {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--r-sm);
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: rgba(255, 255, 255, 0.55);
+  transition: var(--t);
+}
+
+.lang-switch:hover {
+  border-color: var(--yellow);
+  color: var(--white);
+}
+
+.lang-switch .lang-opt {
+  transition: color 0.2s;
+}
+
+.lang-switch .lang-opt.active {
+  color: var(--yellow);
+}
+
+.lang-switch .lang-sep {
+  opacity: 0.4;
+}
+
 /* Hamburger */
 .nav-toggle {
   display: none;

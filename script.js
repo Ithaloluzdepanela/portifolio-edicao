@@ -1,7 +1,156 @@
 /* ================================================
    SANTANA EDITOR — script.js
-   Cursor · Navbar · Scroll Reveal · Filtro · Carrossel
+   Cursor · Navbar · Scroll Reveal · Filtro · Carrossel · i18n
 ================================================ */
+
+/* ── i18n: Detecção automática + toggle PT/EN ── */
+const I18N = {
+  pt: {
+    'meta.title': 'Santana Editor — Edição com Foco',
+    'meta.description': 'Santana Editor — Edição com Foco. Editor de vídeo especializado em YouTube e Reels com estilo dinâmico e acelerado.',
+    'nav.about': 'Sobre',
+    'nav.portfolio': 'Portfólio',
+    'nav.results': 'Resultados',
+    'nav.contact': 'Contato',
+    'nav.openMenu': 'Abrir menu',
+    'hero.badge': '✦ Editor de Vídeo Profissional',
+    'hero.title1': 'EDIÇÃO',
+    'hero.title2': 'COM FOCO',
+    'hero.sub': 'YouTube · Reels · Shorts · Conteúdo que para o scroll',
+    'hero.btnPortfolio': 'Ver Portfólio',
+    'hero.btnContact': 'Falar Comigo',
+    'hero.videoLabel': '▶ Trabalho em destaque — vídeo mais visto do canal em 3 dias',
+    'about.tag': 'Quem sou eu',
+    'about.title': 'CRIANDO<br><span class="text-yellow">IMPACTO</span><br>VISUAL',
+    'about.p1': 'Meu nome é Santana, edito vídeos a 5 anos, e procuro sempre te trazer foco total no que realmente importa: <strong>Retenção e conversão — atenção é moeda.</strong>',
+    'about.p2': 'Cada corte, cada transição, cada efeito é pensado com foco em <strong>retenção e resultado</strong>.',
+    'about.m1': 'Vídeos Editados',
+    'about.m2': 'Visualizações Geradas',
+    'about.m3': 'Anos de Experiência',
+    'about.m4': 'Foco no Resultado',
+    'portfolio.tag': 'Trabalhos',
+    'portfolio.title': 'PORTFÓLIO',
+    'portfolio.filterAll': 'Todos',
+    'portfolio.tagYt1': 'Vídeo mais visto em 3 dias',
+    'portfolio.tagYt2': '3° Vídeo mais visto do canal',
+    'portfolio.tagYt3': 'Vídeo recente',
+    'portfolio.reelTag': 'Instagram Reel',
+    'testimonials.tag': 'Resultados',
+    'testimonials.title': 'O QUE<br><span class="text-yellow">DIZEM</span>',
+    'testimonials.carouselTitle': 'Prints de resultados <span class="text-yellow">↓</span>',
+    'testimonials.prev': 'Anterior',
+    'testimonials.next': 'Próximo',
+    'contact.tag': 'Vamos trabalhar juntos',
+    'contact.title': 'VAMOS CRIAR<br>ALGO INCRÍVEL?',
+    'contact.sub': 'Edição com foco — do roteiro ao corte final.',
+    'footer.slogan': 'Edição com Foco',
+    'footer.copy': '© 2025 Santana Editor. Todos os direitos reservados.'
+  },
+  en: {
+    'meta.title': 'Santana Editor — Editing with Focus',
+    'meta.description': 'Santana Editor — Editing with Focus. Video editor specialized in YouTube and Reels with a dynamic, fast-paced style.',
+    'nav.about': 'About',
+    'nav.portfolio': 'Portfolio',
+    'nav.results': 'Results',
+    'nav.contact': 'Contact',
+    'nav.openMenu': 'Open menu',
+    'hero.badge': '✦ Professional Video Editor',
+    'hero.title1': 'EDITING',
+    'hero.title2': 'WITH FOCUS',
+    'hero.sub': 'YouTube · Reels · Shorts · Content that stops the scroll',
+    'hero.btnPortfolio': 'See Portfolio',
+    'hero.btnContact': 'Talk to Me',
+    'hero.videoLabel': '▶ Featured work — most-viewed channel video in 3 days',
+    'about.tag': 'Who I am',
+    'about.title': 'CREATING<br><span class="text-yellow">VISUAL</span><br>IMPACT',
+    'about.p1': "My name is Santana, I've been editing videos for 5 years, and I always aim to bring total focus to what really matters: <strong>retention and conversion — attention is currency.</strong>",
+    'about.p2': 'Every cut, every transition, every effect is designed with focus on <strong>retention and results</strong>.',
+    'about.m1': 'Videos Edited',
+    'about.m2': 'Views Generated',
+    'about.m3': 'Years of Experience',
+    'about.m4': 'Result-Focused',
+    'portfolio.tag': 'Work',
+    'portfolio.title': 'PORTFOLIO',
+    'portfolio.filterAll': 'All',
+    'portfolio.tagYt1': 'Most-viewed video in 3 days',
+    'portfolio.tagYt2': '3rd most-viewed video on the channel',
+    'portfolio.tagYt3': 'Recent video',
+    'portfolio.reelTag': 'Instagram Reel',
+    'testimonials.tag': 'Results',
+    'testimonials.title': 'WHAT THEY<br><span class="text-yellow">SAY</span>',
+    'testimonials.carouselTitle': 'Result screenshots <span class="text-yellow">↓</span>',
+    'testimonials.prev': 'Previous',
+    'testimonials.next': 'Next',
+    'contact.tag': "Let's work together",
+    'contact.title': "LET'S CREATE<br>SOMETHING AMAZING?",
+    'contact.sub': 'Editing with focus — from script to final cut.',
+    'footer.slogan': 'Editing with Focus',
+    'footer.copy': '© 2025 Santana Editor. All rights reserved.'
+  }
+};
+
+(function initI18n() {
+  const STORAGE_KEY = 'santana-lang';
+
+  function detectLang() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === 'pt' || saved === 'en') return saved;
+    const nav = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+    return nav.startsWith('pt') ? 'pt' : 'en';
+  }
+
+  function applyLang(lang) {
+    const dict = I18N[lang] || I18N.pt;
+
+    // textContent
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key === 'meta.title') {
+        document.title = dict[key] || el.textContent;
+      } else if (key === 'meta.description') {
+        el.setAttribute('content', dict[key] || el.getAttribute('content'));
+      } else if (dict[key] != null) {
+        el.textContent = dict[key];
+      }
+    });
+
+    // innerHTML (for content with <br>, <strong>, <span>)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+
+    // attributes (e.g., aria-label)
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+      const spec = el.getAttribute('data-i18n-attr'); // "attr:key"
+      const [attr, key] = spec.split(':');
+      if (attr && key && dict[key] != null) el.setAttribute(attr, dict[key]);
+    });
+
+    // <html lang>
+    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+
+    // toggle button visual state
+    document.querySelectorAll('#langSwitch .lang-opt').forEach(opt => {
+      opt.classList.toggle('active', opt.dataset.lang === lang);
+    });
+  }
+
+  const current = detectLang();
+  applyLang(current);
+
+  // Toggle button
+  const switchBtn = document.getElementById('langSwitch');
+  if (switchBtn) {
+    switchBtn.addEventListener('click', () => {
+      const now = document.documentElement.getAttribute('lang').startsWith('pt') ? 'pt' : 'en';
+      const next = now === 'pt' ? 'en' : 'pt';
+      localStorage.setItem(STORAGE_KEY, next);
+      applyLang(next);
+    });
+  }
+})();
+
 
 /* ── CURSOR CUSTOMIZADO (Alvo + Raios Solares) ── */
 (function initCursor() {
